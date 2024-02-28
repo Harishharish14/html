@@ -1,21 +1,37 @@
 <!DOCTYPE html>
-<html ng-app="airpub" ng-controller="global">
-  <head ng-controller="meta">
-    <base href="/" />
-    <meta charset="UTF-8">
-    <title ng-bind="title"></title>
-    <meta name="fragment" content="!" />
-    <meta name="description" content="{{description}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!-- dependencies stylesheets and scripts, using default GitHub Page CDN -->
-    <link rel="stylesheet" href="http://static.duoshuo.com/airpub/airpub-dependencies.min.css?v=0.3.2">
-    <script src="http://static.duoshuo.com/airpub/airpub-dependencies.min.js?v=0.3.2"></script>
-    <!-- default theme: chill -->
-    <link rel="stylesheet" href="http://static.duoshuo.com/airpub/themes/chill/0.3.0/css/chill.min.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="http://static.duoshuo.com/airpub/themes/chill/0.3.0/favicon.ico" />
-  </head>
-  <body ng-controller="base" ng-class="state.current.controller">
-    <div ui-view="layout"></div>
-    <!-- airpub configs -->
-  </body>
+<html>
+<head>
+  <title>Search Bar Example</title>
+  <style>
+    input[type="text"] {
+      padding: 5px;
+      width: 200px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="search" placeholder="Search...">
+  <button onclick="search()">Search</button>
+  <p id="output"></p>
+
+  <script>
+    function search() {
+      // Get the value from the input element
+      var searchTerm = document.getElementById('search').value;
+
+      // Perform some processing or logic based on the search term
+      // For example, you can use an if-else statement or a switch statement
+
+      // Simulate a simple example by checking for specific search terms
+      if (searchTerm === 'apple') {
+        document.getElementById('output').innerHTML = 'Search term matched: apple';
+      } else if (searchTerm === 'banana') {
+        document.getElementById('output').innerHTML = 'Search term matched: banana';
+      } else {
+        document.getElementById('output').innerHTML = 'No matching result for the search term: ' + searchTerm;
+      }
+    }
+  </script>
+</body>
 </html>
